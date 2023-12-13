@@ -1,0 +1,10 @@
+services:
+  App.controllers.DepositPostController:
+    class: ../../controllers/DepositPostController
+    arguments: []
+  App.controllers.WithdrawalPostController:
+    class: ../../controllers/WithdrawalPostController
+    arguments: []
+  App.controllers.TransferPostController:
+    class: ../../controllers/TransferPostController
+    arguments: []

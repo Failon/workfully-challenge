@@ -1,0 +1,12 @@
+services:
+  Bank.Account.domain.AccountRepository:
+    class: ../../../Bank/Account/infrastructure/persistence/InMemoryAccountRepository
+
+  Bank.Account.application.DepositRegisterer:
+    class: ../../../Bank/Account/application/DepositRegisterer
+
+  Bank.Account.application.WithdrawalRegisterer:
+    class: ../../../Bank/Account/application/WithdrawalRegisterer
+
+  Bank.Account.application.TransferExecutor:
+    class: ../../../Bank/Account/application/TransferExecutor
