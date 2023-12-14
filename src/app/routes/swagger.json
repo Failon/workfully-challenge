@@ -44,7 +44,7 @@
         }
       }
     },
-    "/withdrawal": {
+    "/withdraw": {
       "post": {
         "tags": [
           "account"

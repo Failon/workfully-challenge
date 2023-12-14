@@ -24,7 +24,7 @@ export const register = (router: Router) => {
   router.post('/deposit', requestSchema, validateReqSchema, (req: Request, res: Response) =>
       depositPostController.run(req, res)
   );
-  router.post('/withdrawal', requestSchema, validateReqSchema, (req: Request, res: Response) =>
+  router.post('/withdraw', requestSchema, validateReqSchema, (req: Request, res: Response) =>
       withdrawalPostController.run(req, res)
   );
   router.post('/transfer', transferRequestSchema, validateReqSchema, (req: Request, res: Response) =>
