@@ -1,0 +1,180 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Workfully Code Challenge - Bank Api",
+    "description": "This is the api doc for the Workfully code challenge",
+    "contact": {
+      "email": "amador.676@gmail.com"
+    },
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "account",
+      "description": "account endpoints"
+    }
+  ],
+  "paths": {
+    "/deposit": {
+      "post": {
+        "tags": [
+          "account"
+        ],
+        "summary": "Add a deposit to an account",
+        "description": "Add a deposit to an account",
+        "operationId": "deposit",
+        "requestBody": {
+          "description": "Registers a new deposit for the given account id",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Deposit"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "500": {
+            "description": "Invalid operation"
+          }
+        }
+      }
+    },
+    "/withdrawal": {
+      "post": {
+        "tags": [
+          "account"
+        ],
+        "summary": "Add a withdrawal to an account",
+        "description": "Add a withdrawal to an account",
+        "operationId": "withdrawal",
+        "requestBody": {
+          "description": "Registers a new deposit for the given account id",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Withdrawal"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "500": {
+            "description": "Invalid operation"
+          }
+        }
+      }
+    },
+    "/transfer": {
+      "post": {
+        "tags": [
+          "account"
+        ],
+        "summary": "Makes a transfer from an account to another account",
+        "description": "Adds a withdrawal in an origin account and a deposit in a destination account",
+        "operationId": "transfer",
+        "requestBody": {
+          "description": "Registers a withdrawal in one account and registers a deposit in another account",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Transfer"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "500": {
+            "description": "Invalid operation"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Deposit": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "531d9381-953b-4452-97e8-386dc39bddd2"
+          },
+          "transactionId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "2d7e03e9-598a-4608-b79d-02224540ae6c"
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int32",
+            "example": 400
+          }
+        }
+      },
+      "Withdrawal": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "f26d370f-cbf9-4d41-ab6e-64ea0b0d89ac"
+          },
+          "transactionId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "4afdd127-21b5-49a2-96bb-ac755528b7e8"
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int32",
+            "example": -400
+          }
+        }
+      },
+      "Transfer": {
+        "type": "object",
+        "properties": {
+          "fromAccountId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "531d9381-953b-4452-97e8-386dc39bddd2"
+          },
+          "toAccountId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "f26d370f-cbf9-4d41-ab6e-64ea0b0d89ac"
+          },
+          "depositId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "2d7e03e9-598a-4608-b79d-02224540ae6c"
+          },
+          "withdrawalId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "4afdd127-21b5-49a2-96bb-ac755528b7e8"
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int32",
+            "example": 400
+          }
+        }
+      }
+    }
+  }
+}

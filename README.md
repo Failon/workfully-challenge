@@ -73,7 +73,7 @@ If any of those are a must for the challenge to be properly evaluated, please co
 ```
 make start
 ```
-This will build the docker container and run the application. wich will start listening in http://localhost:3000 
+This will build the docker container and run the application. You can try out the api in the swagger sandbox: http://localhost:3000/api-docs 
 
 Or if you just want to run the tests:
 

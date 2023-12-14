@@ -1,0 +1,3 @@
+services:
+  Shared.domain.EventBus:
+    class: ../../../Shared/domain/InMemoryEventBus

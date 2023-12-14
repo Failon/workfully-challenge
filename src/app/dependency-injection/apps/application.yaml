@@ -1,10 +1,10 @@
 services:
   App.controllers.DepositPostController:
     class: ../../controllers/DepositPostController
-    arguments: []
+    arguments: ['@Bank.Account.application.DepositRegisterer']
   App.controllers.WithdrawalPostController:
     class: ../../controllers/WithdrawalPostController
-    arguments: []
+    arguments: ['@Bank.Account.application.WithdrawalRegisterer']
   App.controllers.TransferPostController:
     class: ../../controllers/TransferPostController
-    arguments: []
+    arguments: ['@Bank.Account.application.TransferExecutor']
